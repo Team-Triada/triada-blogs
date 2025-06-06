@@ -1,3 +1,4 @@
+@import url('https://fonts.cdnfonts.com/css/technos');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
 :root {
@@ -10,7 +11,10 @@
     --very-light-gray: #999;
     --transparent-red: rgba(255, 0, 51, 0.1);
     --primary-font: 'Montserrat', sans-serif;
+    --logo-font: 'Technos', sans-serif;
     --transition-speed: 0.3s;
+    --glow-effect: 0 0 15px rgba(255, 0, 51, 0.5);
+    --text-glow: 0 0 10px rgba(255, 0, 51, 0.3);
     --neon-border: 1px solid rgba(255, 0, 51, 0.3);
 }
 
@@ -53,18 +57,26 @@ header {
 }
 
 .brand {
+    font-family: var(--logo-font);
     font-size: 24px;
     font-weight: bold;
     color: var(--white);
+    position: relative;
+    z-index: 1001;
     letter-spacing: 1px;
+    text-shadow: var(--text-glow);
     padding: 10px 20px;
     border: var(--neon-border);
+    clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%);
     text-decoration: none;
+    display: block;
     transition: all var(--transition-speed);
 }
 
 .brand:hover {
-    color: var(--primary-red);
+    color: var(--white);
+    text-shadow: 0 0 15px rgba(255, 0, 51, 0.7);
+    border-color: rgba(255, 0, 51, 0.5);
 }
 
 nav {
@@ -719,10 +731,14 @@ footer {
 }
 
 .footer-logo {
+    font-family: var(--logo-font);
     font-size: 24px;
+    font-weight: bold;
     letter-spacing: 1px;
+    text-shadow: var(--text-glow);
     padding: 10px 20px;
     border: var(--neon-border);
+    clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%);
 }
 
 .footer-links {
@@ -810,6 +826,7 @@ footer {
         font-size: 20px;
         padding: 6px 12px;
         border: none;
+        text-shadow: 0 0 10px rgba(255, 0, 51, 0.5);
     }
 
     .nav-toggle-label {
